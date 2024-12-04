@@ -3,6 +3,8 @@ Receiver v2 - Works
  - esp now Recieves and prints
  - VIB works
  - 
+2.3 12/03
+- updaing np class
 
 2.2 11/28
 - added PWM VIB
@@ -17,11 +19,15 @@ import time, asyncio
 import network
 from json import loads
 
-from npDone import setNeo, red, green, blue, white, off
+# own libraries
 from testPWM import setPWM as vib
 
-setNeo(white)
-time.sleep(1)
+from espNeoPixelClass import setNeo, red, green, blue, white, off, purple
+
+
+
+setNeo(red)
+#time.sleep(1)
 
 #{"tagger":"wakeup"}
 sta = network.WLAN(network.STA_IF)
@@ -48,9 +54,10 @@ def writeFile(*args, **kwargs )-> None:
    # sleep(.3)
 vibCounter = 0 
 async def espnow_rx():
+    global vibCounter
+
     writeFile(f'espnow-rx-start | {vibCounter=}')
     tNow = time.time()
-    global vibCounter
     while True:
         setNeo(blue)
         host, msg = e.recv()

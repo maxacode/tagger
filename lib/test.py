@@ -9,8 +9,10 @@
 # 
 # setNeo(b)
 
-from espNeoPixelClass import setNeo, r,g,b,w
+from espNeoPixelClass import setNeo, red, green, blue, white, off, purple
 
-setNeo('green')
-print(setNeo(w,15,reset = False))
 
+setNeo('green', 10)
+print(setNeo('white',8,reset = False))
+
+setNeo(off, 10)

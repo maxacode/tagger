@@ -1,13 +1,20 @@
 from time import sleep
+from espNeoPixelClass import setNeo, red, green, blue, white, off, purple
+
+setNeo(white, 4)
+
 
 from testPWM import setPWM as vib
 
 
-for _ in range(8, 11):
+for _ in range(4, 11):
     vib(_)
-    sleep(.7)
+    setNeo(green)
+    sleep(.5)
     vib(0)
+    setNeo(purple)
     sleep(.3)
 
 
-#import reciever.py
+import reciever.py
+
