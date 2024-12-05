@@ -1,9 +1,14 @@
 """
-Base v1.4
+Base v1.5
 
  - setup espNow stuff
  - main - all tasks with asncio
  - time since last button press tracked.
+1.5
+LED green before deepsleep so it stays on to get attensin
+npDOne - greren value cahgned to high.
+
+# TODO Migrate to espNeoPixelClass
 
 npDone.py
 """
@@ -86,7 +91,7 @@ def keepAlive()-> None:
             sleep(1)
             if dsEnabled:
                 #writeFile('ln 62')
-                setNeo(off)
+                setNeo(green)
                 sleep(1)
                 with open('logBase.txt', 'a+') as file:
                     curTime = str(time.time())
@@ -156,5 +161,6 @@ esp32.wake_on_ext0(pin = butt1, level = esp32.WAKEUP_ANY_HIGH)
 
 keepAlive()
  
+
 
 

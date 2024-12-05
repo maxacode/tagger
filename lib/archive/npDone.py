@@ -15,7 +15,7 @@ pin_10 = Pin(48)
 np = NeoPixel(pin_10, numpix,bpp=3, timing=1)
 
 red = (20, 0, 0)
-green = (0, 20, 0)
+green = (0, 50, 0)
 blue = (0, 0, 20)
 white = (20, 20, 20)
 off = (0,0,0)
@@ -51,8 +51,8 @@ def setNeo(color:tuple[int,int,int], level:int = 30, id:int = 0, reset: bool = F
 
 
 if __name__== '__main__':
-    setNeo(red, 100, 0)
-    setNeo(white, 100, 0, True)
+    setNeo(white, 200)
+   # setNeo(white, 100, 0, True)
     setNeo(green, 100, 0)
 
  

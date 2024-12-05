@@ -44,7 +44,7 @@ def writeFile(*args, **kwargs )-> None:
     """
     Write data to a file with time and pipe separator
     """
-    setNeo(red)
+    setNeo(red, 5)
     curTime = time.time()
     print(curTime, args, kwargs)
 
@@ -59,7 +59,7 @@ async def espnow_rx():
     writeFile(f'espnow-rx-start | {vibCounter=}')
     tNow = time.time()
     while True:
-        setNeo(blue)
+        setNeo(blue, 5)
         host, msg = e.recv()
         if msg:
             # load data fro JSON
@@ -77,7 +77,7 @@ async def espnow_rx():
             if "tagger" in msgJ:
                 vibCounter +=1
                 if "wakeup" == msgJ['tagger']:
-                    setNeo(green) # green/
+                    setNeo(green, 5) # green/
                     writeFile('tagger:wakeup: vib.on')
                     #await asyncio.sleep(2) #keeps buzzing till last packet is recieved.
                     for x in range(0, 5):
