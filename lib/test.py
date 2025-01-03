@@ -9,10 +9,17 @@
 # 
 # setNeo(b)
 
-from espNeoPixelClass import setNeo, red, green, blue, white, off, purple
+# from espNeoPixelClass import setNeo, red, green, blue, white, off, purple
 
 
-setNeo('green', 10)
-print(setNeo('white',8,reset = False))
+# setNeo('green', 10)
+# print(setNeo('white',8,reset = False))
 
-setNeo(off, 10)
+# setNeo(off, 10)
+
+
+# def wf(self, *args, **kwargs)-> None:
+#     print(args, kwargs)
+#     data = f"Args: {', '.join(str(arg) for arg in args)}, Kwargs: {', '.join(f'{key}={value}' for key, value in kwargs.items())}"
+
+
